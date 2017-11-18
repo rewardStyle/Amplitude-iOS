@@ -1047,7 +1047,7 @@ static NSString *const SEQUENCE_NUMBER = @"sequence_number";
 
             // Upload finished, allow background task to be ended
             UIApplication *app = [self getSharedApplication];
-            if (app != nil) {
+            if (app != nil && _uploadTaskID != UIBackgroundTaskInvalid) {
                 [app endBackgroundTask:_uploadTaskID];
                 _uploadTaskID = UIBackgroundTaskInvalid;
             }
